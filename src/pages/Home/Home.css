@@ -1,0 +1,18 @@
+.home {
+    padding: 16px;
+}
+
+.blind-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.search-input {
+    width: 40%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #6bead5;
+    border-radius: 4px;
+    background-color: #b7fff3;
+}   

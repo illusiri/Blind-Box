@@ -1,42 +1,76 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ffffff;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.content-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f8f9fa;
 }
 
-.card {
-  padding: 2em;
+
+
+.sidebar {
+  width: 100px; /* 边栏宽度，可根据需要调整 */
+  background: linear-gradient(135deg, #04f5b9 0%, #f6fdfb 75%);
+  padding: px;
+  box-shadow: 2px 0 5px rgba(237, 116, 116, 0.1); /* 添加阴影效果 */
+  overflow-y: auto; /* 内容过多时可滚动 */
+  flex-shrink: 0; /* 防止侧边栏在空间不足时被压缩 */
+  height: 100vh; /* 设置高度为视口高度 */
+  text-align: left; /* 确保文本左对齐 */
 }
 
-.read-the-docs {
-  color: #888;
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* 按钮容器居中 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-menu-item {
+   /* 按钮宽度调整 */
+    width: 90px;
+    /* 按钮高度调整 */
+    height: 60px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #426a92;
+    /* 字体颜色调整 */
+    color: #ecf0f1;
+    /* 字体大小调整 */
+    font-size: 16px;
+    /* 字体粗细调整 */
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    
+    /* 文字居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

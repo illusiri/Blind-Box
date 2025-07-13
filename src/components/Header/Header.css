@@ -1,0 +1,22 @@
+.header {
+    background: linear-gradient(135deg, #58b5ee 0%, #7b17de 100%);
+    color: rgb(242, 240, 240);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    flex-shrink: 0; /* 防止header被压缩 */
+    height: 60px; /* 设置固定高度，可以根据需要调整 */
+    min-height: 60px; /* 最小高度 */
+    
+    /* 文本位置控制 */
+    display: flex;
+    align-items: center; /* 垂直居中 */
+    justify-content: center; /* 水平居中 */
+}
+
+
+
+
+
+
+
