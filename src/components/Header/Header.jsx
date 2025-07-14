@@ -3,6 +3,6 @@ import './Header.css';
 
 export default function Header() {
    return <div className="header">
-       <h1>Welcome</h1>
+       <h1>illusiri的妙妙商店</h1>
    </div>;
 }

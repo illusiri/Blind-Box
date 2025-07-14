@@ -6,10 +6,13 @@ import Home from './pages/Home/Home.jsx';
 import './pages/Home/Home.css';
 import Order from './pages/Orders/orders.jsx';
 import './pages/Orders/orders.css';
+import Community from './pages/Community/community.jsx';
+import './pages/Community/community.css';
+import Sign from './pages/Sign/sign.jsx'; // 导入新的登录组件
 import PropTypes from 'prop-types'
 
 
- function Sidebar({ setPageIndex }) {
+function Sidebar({ setPageIndex, pageIndex }) { // 添加pageIndex属性
 
   function handleMenuClick(index) {
         setPageIndex(index);
@@ -26,13 +29,18 @@ import PropTypes from 'prop-types'
        
         <ul>
             {menuItems.map(item => (
-                <button key={item.id} onClick={() => handleMenuClick(item.id)} className="sidebar-menu-item">
+                <button 
+                  key={item.id} 
+                  onClick={() => handleMenuClick(item.id)} 
+                  className={`sidebar-menu-item ${pageIndex === item.id ? 'active' : ''}`}
+                >
                     {item.name}
                 </button>
             ))}
         </ul>
     </div>
 } 
+
 Sidebar.propTypes = {
   pageIndex: PropTypes.number.isRequired,
   setPageIndex: PropTypes.func.isRequired
@@ -46,18 +54,18 @@ function App() {
       case 1:
         return <Home />;
       case 2:
-        return <div></div>;
+        return <Sign />; 
       case 3:
         return <Order />;
       case 4:
-        return <div></div>;
+        return <Community />;
       default:
         return <Home />;
     }
   };
 
   return <div className="app-container">
-    <Sidebar setPageIndex={setPageIndex} />
+    <Sidebar pageIndex={pageIndex} setPageIndex={setPageIndex} /> {/* 传递pageIndex */}
     <div className="content-area">
       <Header />
       <main className="main-content">

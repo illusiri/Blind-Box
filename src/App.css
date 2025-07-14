@@ -31,7 +31,7 @@
 
 
 .sidebar {
-  width: 100px; /* 边栏宽度，可根据需要调整 */
+  width: 110px; /* 边栏宽度，可根据需要调整 */
   background: linear-gradient(135deg, #04f5b9 0%, #f6fdfb 75%);
   padding: px;
   box-shadow: 2px 0 5px rgba(237, 116, 116, 0.1); /* 添加阴影效果 */
@@ -53,7 +53,7 @@
 
 .sidebar-menu-item {
    /* 按钮宽度调整 */
-    width: 90px;
+    width: 80px;
     /* 按钮高度调整 */
     height: 60px;
     margin: 8px 0;
