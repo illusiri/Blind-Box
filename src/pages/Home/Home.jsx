@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductDisplay from '../../components/ProductDisplay/ProductDisplay';
+import ProductDetailModal from '../../components/ProductDetailModal/ProductDetailModal';
 import './Home.css';
 
 export default function Home() {
@@ -7,12 +8,17 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [currentUser, setCurrentUser] = useState(null);
-  const [searchTerm, setSearchTerm] = useState(''); // 添加搜索状态
+  const [searchTerm, setSearchTerm] = useState(''); 
   const [pagination, setPagination] = useState({
     current_page: 1,
     total_pages: 1,
     total_items: 0
   });
+  
+  // 添加模态窗口状态
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [purchaseResult, setPurchaseResult] = useState(null);
 
   // 获取当前用户信息
   useEffect(() => {
@@ -80,6 +86,13 @@ export default function Home() {
     fetchProducts(1, ''); // 重新获取所有商品
   };
 
+  // 处理查看详情
+  const handleViewDetail = (product) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+    setPurchaseResult(null); // 清除之前的购买结果
+  };
+
   // 处理购买
   const handleBuy = async (product) => {
     if (!currentUser) {
@@ -87,43 +100,40 @@ export default function Home() {
       return;
     }
 
-    const confirmed = window.confirm(
-      `确定要购买 "${product.name}" 吗？\n价格: ¥${product.price}\n卖家: ${product.seller_username}`
-    );
+    try {
+      const response = await fetch('/api/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          buyer_id: currentUser.id,
+          seller_id: product.user_id,
+          product_id: product.id,
+          price: product.price
+        })
+      });
 
-    if (confirmed) {
-      try {
-        const response = await fetch('/api/orders', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            buyer_id: currentUser.id,
-            seller_id: product.user_id,
-            product_id: product.id,
-            price: product.price
-          })
-        });
+      const data = await response.json();
 
-        const data = await response.json();
-
-        if (response.ok) {
-          // 显示获得的奖励
-          if (data.reward) {
-            alert(`购买成功！\n您获得了：${data.reward.name}\n请前往订单页面查看详情。`);
-          } else {
-            alert('购买成功！请前往订单页面查看详情。');
-          }
-          // 刷新商品列表
-          fetchProducts(pagination.current_page, searchTerm);
-        } else {
-          alert(data.error || '购买失败，请重试');
+      if (response.ok) {
+        // 显示获得的奖励
+        if (data.reward) {
+          // 更新模态窗口显示购买结果
+          setPurchaseResult({
+            name: data.reward.name,
+            image: data.reward.image
+          });
         }
-      } catch (err) {
-        console.error('购买错误:', err);
-        alert('购买失败，请检查网络连接');
+        
+        // 刷新商品列表
+        fetchProducts(pagination.current_page, searchTerm);
+      } else {
+        alert(data.error || '购买失败，请重试');
       }
+    } catch (err) {
+      console.error('购买错误:', err);
+      alert('购买失败，请检查网络连接');
     }
   };
 
@@ -217,7 +227,7 @@ export default function Home() {
                 key={product.id}
                 product={product}
                 currentUser={currentUser}
-                onBuy={handleBuy}
+                onViewDetail={handleViewDetail} // 修改为查看详情
               />
             ))}
           </div>
@@ -248,6 +258,23 @@ export default function Home() {
           )}
         </>
       )}
+      
+      {/* 添加模态窗口 */}
+      <ProductDetailModal
+        isOpen={isModalOpen}
+        onClose={() => {
+          setIsModalOpen(false);
+          // 等动画结束后再清除数据
+          setTimeout(() => {
+            setPurchaseResult(null);
+            setSelectedProduct(null);
+          }, 300);
+        }}
+        product={selectedProduct}
+        onBuy={handleBuy}
+        currentUser={currentUser}
+        purchaseResult={purchaseResult}
+      />
     </div>
   );
 }

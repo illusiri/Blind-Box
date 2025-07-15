@@ -1,24 +1,30 @@
 .product-display {
-  display: flex;
+  display: grid;
+  grid-template-columns: 220px 1fr; /* 增加左侧图片区域宽度 */
+  height: 250px; /* 增加卡片高度，确保按钮完全可见 */
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   margin: 16px 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(50% - 12px); /* 设置为页面宽度的一半减去间距 */
+  box-sizing: border-box;
 }
 
-.product-display:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px; /* 卡片之间的间距 */
 }
 
 .product-display-image {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 100%;
   overflow: hidden;
-  border-radius: 8px 8px 0 0;
+  border-radius: 12px 0 0 12px;
 }
 
 .product-display-image img {
@@ -32,6 +38,9 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* 确保内容分布合理 */
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .product-display-title {
@@ -40,9 +49,11 @@
   font-weight: 600;
   color: #333;
   line-height: 1.3;
+  cursor: pointer;
 }
 
 .product-display-description {
+  display: none; /* 完全隐藏描述文本 */
   margin: 0 0 16px 0;
   color: #666;
   line-height: 1.5;
@@ -50,6 +61,7 @@
 }
 
 .product-display-details {
+  margin-top: auto; /* 将详情推到下方 */
   margin-bottom: 16px;
 }
 
@@ -79,6 +91,7 @@
   align-items: center;
   margin-top: auto;
   padding-top: 16px;
+  padding-bottom: 10px; /* 添加底部间距 */
   border-top: 1px solid #eee;
 }
 
@@ -118,12 +131,83 @@
   background-color: #6c757d;
 }
 
+.buy-button.view-detail-button {
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
 .product-display-quantity .value {
   color: #007bff;
   font-weight: 600;
 }
 
-/* 响应式设计 */
+/* 修改卡片布局为一行两张 */
+.product-display {
+  display: grid;
+  grid-template-columns: 220px 1fr; /* 增加左侧图片区域宽度 */
+  height: 250px; /* 增加卡片高度，确保按钮完全可见 */
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 16px 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: calc(50% - 12px); /* 设置为页面宽度的一半减去间距 */
+  box-sizing: border-box;
+}
+
+/* 添加卡片容器 */
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px; /* 卡片之间的间距 */
+}
+
+/* 确保按钮有足够空间 */
+.product-display-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 16px;
+  padding-bottom: 10px; /* 添加底部间距 */
+  border-top: 1px solid #eee;
+}
+
+/* 确保按钮大小合适 */
+.buy-button.view-detail-button {
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+/* 修复图片容器 */
+.product-display-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px 0 0 12px;
+}
+
+/* 调整文字区域 */
+.product-display-info {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 确保内容分布合理 */
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* 更新响应式布局 */
+@media (max-width: 992px) {
+  .product-display {
+    width: 100%; /* 小屏幕上一行一个卡片 */
+  }
+}
+
 @media (max-width: 768px) {
   .product-display {
     flex-direction: column;

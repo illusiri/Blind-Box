@@ -186,7 +186,7 @@ export default function Community() {
                     onClick={() => setNewPost({ ...newPost, image_url: '' })}
                     className="remove-image-button"
                   >
-                    ×
+                   x
                   </button>
                 </div>
               )}
@@ -197,7 +197,7 @@ export default function Community() {
                   onClick={() => setShowImageGallery(true)}
                   className="add-image-button"
                 >
-                  📷 添加图片
+                  添加图片
                 </button>
                 
                 <div className="post-submit-actions">
@@ -232,7 +232,7 @@ export default function Community() {
       {/* 帖子列表 */}
       {posts.length === 0 ? (
         <div className="empty-state">
-          <p>还没有人发布帖子，快来发布第一个吧！</p>
+          <p>还没有人发布帖子</p>
         </div>
       ) : (
         <>

@@ -1,44 +1,50 @@
-import './App.css'
-import Header from './components/Header/Header.jsx'
-import './components/Header/Header.css'
-import React from 'react'
+import './App.css';
+import Header from './components/Header/Header.jsx';
+import './components/Header/Header.css';
+import React from 'react';
 import Home from './pages/Home/Home.jsx';
 import './pages/Home/Home.css';
 import Order from './pages/Orders/orders.jsx';
 import './pages/Orders/orders.css';
 import Community from './pages/Community/community.jsx';
 import './pages/Community/community.css';
-import Sign from './pages/Sign/sign.jsx'; // 导入新的登录组件
-import PropTypes from 'prop-types'
+import Sign from './pages/Sign/sign.jsx'; 
+import PropTypes from 'prop-types';
 
+// 导入图标
+import homeIcon from './assets/icons/home.png'; 
+import profileIcon from './assets/icons/profile.png';
+import orderIcon from './assets/icons/order.png';
+import communityIcon from './assets/icons/community.png';
 
-function Sidebar({ setPageIndex, pageIndex }) { // 添加pageIndex属性
-
+function Sidebar({ setPageIndex, pageIndex }) { 
   function handleMenuClick(index) {
-        setPageIndex(index);
-    }
-    const menuItems = [
-        { id: 1, name: "首页"},
-        { id: 2, name: "我的"},
-        { id: 3, name: "订单"},
-        { id: 4, name: "社区"},
-    ]
+    setPageIndex(index);
+  }
+  
+  const menuItems = [
+    { id: 1, name: "首页", icon: homeIcon },
+    { id: 2, name: "我的", icon: profileIcon },
+    { id: 3, name: "订单", icon: orderIcon },
+    { id: 4, name: "社区", icon: communityIcon },
+  ];
 
-    return <div className="sidebar">
-        <h2>导航菜单</h2>       
-       
-        <ul>
-            {menuItems.map(item => (
-                <button 
-                  key={item.id} 
-                  onClick={() => handleMenuClick(item.id)} 
-                  className={`sidebar-menu-item ${pageIndex === item.id ? 'active' : ''}`}
-                >
-                    {item.name}
-                </button>
-            ))}
-        </ul>
+  return (
+    <div className="sidebar">
+      <ul>
+        {menuItems.map(item => (
+          <button 
+            key={item.id} 
+            onClick={() => handleMenuClick(item.id)} 
+            className={`sidebar-menu-item ${pageIndex === item.id ? 'active' : ''}`}
+          >
+            <img src={item.icon} alt={item.name} className="sidebar-icon" />
+            <span className="sidebar-text">{item.name}</span>
+          </button>
+        ))}
+      </ul>
     </div>
+  );
 } 
 
 Sidebar.propTypes = {
@@ -65,7 +71,7 @@ function App() {
   };
 
   return <div className="app-container">
-    <Sidebar pageIndex={pageIndex} setPageIndex={setPageIndex} /> {/* 传递pageIndex */}
+    <Sidebar pageIndex={pageIndex} setPageIndex={setPageIndex} /> 
     <div className="content-area">
       <Header />
       <main className="main-content">

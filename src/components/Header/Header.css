@@ -1,5 +1,5 @@
 .header {
-    background: linear-gradient(135deg, #58b5ee 0%, #7b17de 100%);
+    background: linear-gradient(135deg, #72d3e6 0%, #e3f143 100%);
     color: rgb(242, 240, 240);
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -12,6 +12,19 @@
     display: flex;
     align-items: center; /* 垂直居中 */
     justify-content: center; /* 水平居中 */
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* 调整图标与文本之间的间距 */
+}
+
+.header-icon {
+  width: 60px; /* 根据需要调整图标大小 */
+  height: 60px;
+  object-fit: contain;
 }
 
 

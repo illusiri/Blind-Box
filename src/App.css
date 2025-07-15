@@ -32,8 +32,10 @@
 
 .sidebar {
   width: 110px; /* 边栏宽度，可根据需要调整 */
-  background: linear-gradient(135deg, #04f5b9 0%, #f6fdfb 75%);
-  padding: px;
+  background: linear-gradient(135deg, #72d3e6 0%, #f6fdfb 75%);
+  padding: 0px;
+  /* 修改点1: 增加顶部内边距 */
+  padding-top: 60px; /* 可根据需要调整此值 */
   box-shadow: 2px 0 5px rgba(237, 116, 116, 0.1); /* 添加阴影效果 */
   overflow-y: auto; /* 内容过多时可滚动 */
   flex-shrink: 0; /* 防止侧边栏在空间不足时被压缩 */
@@ -49,28 +51,69 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* 修改点2: 添加间距控制 */
+    gap: 50px; /* 按钮之间的间距，可根据需要调整此值 */
 }
 
+/* 侧边栏按钮样式 */
 .sidebar-menu-item {
-   /* 按钮宽度调整 */
-    width: 80px;
-    /* 按钮高度调整 */
+  width: 90px;
+  height: 90px; /* 增大高度以容纳图标和文本 */
+  margin: 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #64798e;
+  color: #ecf0f1;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  /* 修改为纵向排列图标和文字 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* 图标和文字之间的间距 */
+  padding: 8px;
+}
+
+/* 图标样式 */
+.sidebar-icon {
+  width: 32px; /* 根据您的图标尺寸调整 */
+  height: 32px;
+  object-fit: contain; /* 保持图标比例 */
+}
+
+/* 文字样式 */
+.sidebar-text {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* 激活状态 */
+.sidebar-menu-item.active {
+  background-color: #a1aa4f; /* 深色背景 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px; /* 较小屏幕上减小宽度 */
+  }
+  
+  .sidebar-menu-item {
+    width: 60px;
     height: 60px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 8px;
-    background-color: #426a92;
-    /* 字体颜色调整 */
-    color: #ecf0f1;
-    /* 字体大小调整 */
-    font-size: 16px;
-    /* 字体粗细调整 */
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    
-    /* 文字居中 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  }
+  
+  .sidebar-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .sidebar-text {
+    font-size: 12px;
+  }
 }
