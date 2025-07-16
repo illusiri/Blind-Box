@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-// 导入图片
+
 import hechengyuIcon from '../../assets/hechengyu.png';
 
 export default function Header() {

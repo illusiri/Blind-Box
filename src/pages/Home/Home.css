@@ -8,7 +8,7 @@
     gap: 16px;
 }
 
-/* 搜索区域样式 */
+/* 搜索区域 */
 .search-section {
   margin-bottom: 32px;
   padding: 20px;
@@ -33,7 +33,7 @@
 .search-input {
   width: 100%;
   padding: 12px 32px;
-  padding-right: 30px; /* 为清空按钮留空间 */
+  padding-right: 30px; 
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 16px;
@@ -231,6 +231,6 @@
 
 @media (max-width: 480px) {
   .search-input {
-    font-size: 16px; /* 防止iOS缩放 */
+    font-size: 16px; 
   }
 }

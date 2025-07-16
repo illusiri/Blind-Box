@@ -338,7 +338,7 @@
   background: #e7f3ff;
 }
 
-/* 响应式设计 */
+
 @media (max-width: 768px) {
   .large-modal {
     width: 95%;

@@ -31,16 +31,16 @@
 
 
 .sidebar {
-  width: 110px; /* 边栏宽度，可根据需要调整 */
+  width: 110px; /* 边栏宽度 */
   background: linear-gradient(135deg, #72d3e6 0%, #f6fdfb 75%);
   padding: 0px;
-  /* 修改点1: 增加顶部内边距 */
-  padding-top: 60px; /* 可根据需要调整此值 */
-  box-shadow: 2px 0 5px rgba(237, 116, 116, 0.1); /* 添加阴影效果 */
+  /* 顶部内边距 */
+  padding-top: 60px; 
+  box-shadow: 2px 0 5px rgba(237, 116, 116, 0.1); /* 阴影效果 */
   overflow-y: auto; /* 内容过多时可滚动 */
-  flex-shrink: 0; /* 防止侧边栏在空间不足时被压缩 */
-  height: 100vh; /* 设置高度为视口高度 */
-  text-align: left; /* 确保文本左对齐 */
+  flex-shrink: 0; 
+  height: 100vh; /
+  text-align: left; 
 }
 
 .sidebar ul {
@@ -51,14 +51,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* 修改点2: 添加间距控制 */
-    gap: 50px; /* 按钮之间的间距，可根据需要调整此值 */
+    /*间距控制 */
+    gap: 50px; 
 }
 
 /* 侧边栏按钮样式 */
 .sidebar-menu-item {
   width: 90px;
-  height: 90px; /* 增大高度以容纳图标和文本 */
+  height: 90px; 
   margin: 0;
   border: none;
   border-radius: 8px;
@@ -69,7 +69,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   
-  /* 修改为纵向排列图标和文字 */
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,9 +80,9 @@
 
 /* 图标样式 */
 .sidebar-icon {
-  width: 32px; /* 根据您的图标尺寸调整 */
+  width: 32px; /* 图标尺寸*/
   height: 32px;
-  object-fit: contain; /* 保持图标比例 */
+  object-fit: contain; /* 图标比例 */
 }
 
 /* 文字样式 */
@@ -100,7 +100,7 @@
 
 @media (max-width: 768px) {
   .sidebar {
-    width: 70px; /* 较小屏幕上减小宽度 */
+    width: 70px; 
   }
   
   .sidebar-menu-item {

@@ -1,21 +1,20 @@
 import express from 'express';
 import sqlite3 from 'sqlite3';
 import bcrypt from 'bcrypt';
-import { join } from 'path';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 import fs from 'fs';
 import multer from 'multer';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
 import cors from 'cors';
+
+// 在文件顶部声明一次这些变量
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // 设置服务器
 const app = express();
 // eslint-disable-next-line no-undef
 const PORT = process.env.PORT || 3001;
-
-// 获取当前文件目录
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 // 创建数据库连接
 const dbPath = join(__dirname, 'database.sqlite');
@@ -140,6 +139,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // 提供静态文件访问（图片访问）
 app.use('/uploads', express.static(join(__dirname, 'uploads')));
+
 
 // 注册API
 app.post('/api/register', async (req, res) => {
@@ -836,6 +836,17 @@ app.get('/api/images', (req, res) => {
     res.json(images);
   });
 });
+
+
+
+// 提供前端静态文件
+app.use(express.static(join(dirname(__dirname), 'dist')));
+
+// 处理所有前端路由 - 一定要放在所有API路由之后
+app.get('*', (req, res) => {
+  res.sendFile(join(dirname(__dirname), 'dist', 'index.html'));
+});
+
 
 // 启动服务器
 app.listen(PORT, () => {

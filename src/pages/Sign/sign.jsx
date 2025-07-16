@@ -73,7 +73,7 @@ export default function Sign() {
       alert('商品删除成功');
     } catch (error) {
       console.error('删除商品错误:', error);
-      throw error; // 重新抛出错误，让ProductCard组件处理
+      throw error; // 重新抛出错误
     }
   };
 

@@ -16,7 +16,7 @@ export default function ImageUpload({ onImageSelect, selectedImage }) {
       return;
     }
 
-    // 验证文件大小（5MB）
+    // 验证文件大小
     if (file.size > 5 * 1024 * 1024) {
       alert('图片文件大小不能超过5MB');
       return;

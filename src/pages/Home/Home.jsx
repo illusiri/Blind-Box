@@ -15,7 +15,7 @@ export default function Home() {
     total_items: 0
   });
   
-  // 添加模态窗口状态
+  // 模态窗口状态
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [purchaseResult, setPurchaseResult] = useState(null);
@@ -72,7 +72,7 @@ export default function Home() {
   // 处理搜索
   const handleSearch = (e) => {
     e.preventDefault();
-    fetchProducts(1, searchTerm); // 搜索时重置到第一页
+    fetchProducts(1, searchTerm); 
   };
 
   // 处理搜索输入变化
@@ -83,14 +83,14 @@ export default function Home() {
   // 清空搜索
   const clearSearch = () => {
     setSearchTerm('');
-    fetchProducts(1, ''); // 重新获取所有商品
+    fetchProducts(1, ''); 
   };
 
   // 处理查看详情
   const handleViewDetail = (product) => {
     setSelectedProduct(product);
     setIsModalOpen(true);
-    setPurchaseResult(null); // 清除之前的购买结果
+    setPurchaseResult(null); 
   };
 
   // 处理购买
@@ -119,7 +119,7 @@ export default function Home() {
       if (response.ok) {
         // 显示获得的奖励
         if (data.reward) {
-          // 更新模态窗口显示购买结果
+          
           setPurchaseResult({
             name: data.reward.name,
             image: data.reward.image
@@ -227,7 +227,7 @@ export default function Home() {
                 key={product.id}
                 product={product}
                 currentUser={currentUser}
-                onViewDetail={handleViewDetail} // 修改为查看详情
+                onViewDetail={handleViewDetail}
               />
             ))}
           </div>
@@ -259,7 +259,7 @@ export default function Home() {
         </>
       )}
       
-      {/* 添加模态窗口 */}
+      {/* 模态窗口 */}
       <ProductDetailModal
         isOpen={isModalOpen}
         onClose={() => {

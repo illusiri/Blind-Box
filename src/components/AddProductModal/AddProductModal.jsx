@@ -7,7 +7,7 @@ export default function AddProductModal({ isOpen, onClose, onSubmit, userId }) {
     name: '',
     description: '',
     price: '',
-    cover_image: '' // 统一使用cover_image作为封面图片字段
+    cover_image: ''
   });
   const [subProducts, setSubProducts] = useState([{ name: '', image_url: '', quantity: '' }]);
   const [error, setError] = useState('');

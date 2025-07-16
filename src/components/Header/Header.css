@@ -4,25 +4,25 @@
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     width: 100%;
-    flex-shrink: 0; /* 防止header被压缩 */
-    height: 60px; /* 设置固定高度，可以根据需要调整 */
+    flex-shrink: 0; 
+    height: 60px; /* 固定高度 */
     min-height: 60px; /* 最小高度 */
     
     /* 文本位置控制 */
     display: flex;
-    align-items: center; /* 垂直居中 */
-    justify-content: center; /* 水平居中 */
+    align-items: center; 
+    justify-content: center; 
 }
 
 .header-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px; /* 调整图标与文本之间的间距 */
+  gap: 15px; /* 图标与文本之间的间距 */
 }
 
 .header-icon {
-  width: 60px; /* 根据需要调整图标大小 */
+  width: 60px; /* 图标大小 */
   height: 60px;
   object-fit: contain;
 }

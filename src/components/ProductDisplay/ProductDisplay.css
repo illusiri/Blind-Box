@@ -1,14 +1,14 @@
 .product-display {
   display: grid;
-  grid-template-columns: 220px 1fr; /* 增加左侧图片区域宽度 */
-  height: 250px; /* 增加卡片高度，确保按钮完全可见 */
+  grid-template-columns: 220px 1fr; /* 左侧图片区域宽度 */
+  height: 250px; /* 增片高度 */
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   margin: 16px 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: calc(50% - 12px); /* 设置为页面宽度的一半减去间距 */
+  width: calc(50% - 12px); /* 页面宽度的一半减去间距 */
   box-sizing: border-box;
 }
 
@@ -38,7 +38,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 确保内容分布合理 */
+  justify-content: space-between; 
   height: 100%;
   box-sizing: border-box;
 }
@@ -53,7 +53,7 @@
 }
 
 .product-display-description {
-  display: none; /* 完全隐藏描述文本 */
+  display: none; 
   margin: 0 0 16px 0;
   color: #666;
   line-height: 1.5;
@@ -91,7 +91,7 @@
   align-items: center;
   margin-top: auto;
   padding-top: 16px;
-  padding-bottom: 10px; /* 添加底部间距 */
+  padding-bottom: 10px; /* 底部间距 */
   border-top: 1px solid #eee;
 }
 
@@ -141,22 +141,22 @@
   font-weight: 600;
 }
 
-/* 修改卡片布局为一行两张 */
+
 .product-display {
   display: grid;
-  grid-template-columns: 220px 1fr; /* 增加左侧图片区域宽度 */
-  height: 250px; /* 增加卡片高度，确保按钮完全可见 */
+  grid-template-columns: 220px 1fr; /* 左侧图片区域宽度 */
+  height: 250px; /* 增加卡片高度 */
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   margin: 16px 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: calc(50% - 12px); /* 设置为页面宽度的一半减去间距 */
+  width: calc(50% - 12px); /* 页面宽度的一半减去间距 */
   box-sizing: border-box;
 }
 
-/* 添加卡片容器 */
+/* 卡片容器 */
 .products-list {
   display: flex;
   flex-wrap: wrap;
@@ -164,7 +164,7 @@
   gap: 24px; /* 卡片之间的间距 */
 }
 
-/* 确保按钮有足够空间 */
+
 .product-display-footer {
   display: flex;
   justify-content: space-between;
@@ -175,13 +175,13 @@
   border-top: 1px solid #eee;
 }
 
-/* 确保按钮大小合适 */
+/* 按钮大小 */
 .buy-button.view-detail-button {
   padding: 10px 20px;
   font-size: 15px;
 }
 
-/* 修复图片容器 */
+
 .product-display-image {
   position: relative;
   width: 100%;
@@ -190,21 +190,21 @@
   border-radius: 12px 0 0 12px;
 }
 
-/* 调整文字区域 */
+/* 文字区域 */
 .product-display-info {
   flex: 1;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* 确保内容分布合理 */
+  justify-content: space-between; 
   height: 100%;
   box-sizing: border-box;
 }
 
-/* 更新响应式布局 */
+
 @media (max-width: 992px) {
   .product-display {
-    width: 100%; /* 小屏幕上一行一个卡片 */
+    width: 100%; 
   }
 }
 

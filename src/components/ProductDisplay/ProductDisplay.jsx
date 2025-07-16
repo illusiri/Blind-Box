@@ -10,7 +10,7 @@ export default function ProductDisplay({ product, onViewDetail, currentUser }) {
     onViewDetail(product);
   };
 
-  // 确定显示的图片 - 优先显示封面图片，如果没有则使用占位符
+  // 确定显示的图片 - 优先封面图片，没有则占位符
   const displayImage = product.cover_image || fallbackImage;
   const isOutOfStock = product.remaining_quantity <= 0;
 
@@ -21,7 +21,7 @@ export default function ProductDisplay({ product, onViewDetail, currentUser }) {
           src={displayImage} 
           alt={product.name}
           onError={(e) => {
-            // 防止无限循环：使用内联base64图片
+            // 防止无限循环
             if (e.target.src !== fallbackImage) {
               e.target.src = fallbackImage;
             }

@@ -15,10 +15,10 @@
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-  width: 95%; /* 扩大到几乎全屏宽度 */
-  max-width: 1800px; /* 显著增大最大宽度 */
-  min-width: 1200px; /* 设置最小宽度 */
-  max-height: 110vh; /* 增大高度利用空间 */
+  width: 95%; 
+  max-width: 1800px; /* 最大宽度 */
+  min-width: 1200px; /* 最小宽度 */
+  max-height: 110vh; /* 高度 */
   overflow-y: auto;
   position: relative;
   padding: 0;
@@ -51,53 +51,53 @@
 }
 
 .product-detail-header {
-  padding: 20px 30px; /* 减小内边距 */
-  border-bottom: 1px solid #eee; /* 减小边框粗细 */
-  background-color: #fbfbfb; /* 添加轻微背景色 */
+  padding: 20px 30px; /* 内边距 */
+  border-bottom: 1px solid #eee; /* 边框粗细 */
+  background-color: #fbfbfb; /* 背景色 */
 }
 
 .product-detail-header h2 {
   margin: 0;
-  font-size: 24px; /* 减小标题字体 */
-  color: #555; /* 降低颜色对比度 */
+  font-size: 24px; /* 标题字体 */
+  color: #555;
   padding: 0;
-  font-weight: 500; /* 减轻字重 */
+  font-weight: 500; 
 }
 
 .product-detail-body {
   display: flex;
-  padding: 45px 50px 60px; /* 增大底部内边距 */
-  gap: 55px; /* 保持内容间距 */
+  padding: 45px 50px 60px; /* 底部内边距 */
+  gap: 55px; 
 }
 
 .product-image-container {
-  flex: 0 0 40%; /* 保持原有比例 */
-  max-width: 550px; /* 保持原有最大宽度 */
+  flex: 0 0 40%; 
+  max-width: 550px;
   margin-right: 0;
 }
 
 .product-detail-image {
   width: 100%;
   height: auto;
-  border-radius: 16px; /* 增大圆角 */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 增强阴影效果 */
+  border-radius: 16px; /* 圆角 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* 阴影效果 */
 }
 
 .product-info-container {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 5px 0; /* 减小顶部内边距 */
+  padding: 5px 0; /* 顶部内边距 */
 }
 
 .product-description {
   margin-top: 10px;
-  margin-bottom: 60px; /* 减小下边距 */
-  line-height: 1.3; /* 稍微减小行高 */
-  font-size: 20px !important; /* 保持大字体 */
+  margin-bottom: 60px; /* 下边距 */
+  line-height: 1.3; /* 行高 */
+  font-size: 20px !important; /* 字体大小 */
   color: #333;
   max-width: 100%;
-  padding: 20px 25px; /* 显著减小内边距 */
+  padding: 20px 25px; /* 内边距 */
   background-color: #f8f9fa;
   border-radius: 16px;
   border-left: 10px solid #426a92;
@@ -110,14 +110,14 @@
 }
 
 .product-description::before {
-  display: none; /* 隐藏引号装饰 */
+  display: none; 
 }
 
 .product-meta {
   margin-top: 10px;
   margin-bottom: 30px; 
   padding-left: 10px; /* 与描述区域对齐 */
-  opacity: 0.9; /* 略微降低不透明度 */
+  opacity: 0.9; /* 不透明度 */
 }
 
 .meta-item {
@@ -126,38 +126,38 @@
 }
 
 .meta-item .label {
-  color: #777; /* 降低标签颜色对比度 */
+  color: #777; 
   width: 110px;
-  font-size: 16px; /* 减小字体 */
-  font-weight: 400; /* 减轻字重 */
+  font-size: 16px; /* 字体 */
+  font-weight: 400;
 }
 
 .meta-item .value {
   color: #444;
   font-weight: 500;
-  font-size: 16px; /* 减小字体 */
+  font-size: 16px; 
 }
 
 .product-price {
-  font-size: 32px; /* 减小价格字体 */
+  font-size: 32px; 
   font-weight: 700;
   color: #e74c3c;
   margin-bottom: 30px;
-  padding-left: 10px; /* 添加左内边距与其他元素对齐 */
+  padding-left: 10px; 
 }
 
 .buy-button {
-  padding: 15px 40px; /* 减小按钮尺寸 */
+  padding: 15px 40px; /* 按钮尺寸 */
   background-color: #426a92;
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 18px; /* 减小按钮字体 */
+  font-size: 18px; 
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 20px;
-  margin-left: 10px; /* 添加左边距与其他元素对齐 */
+  margin-left: 10px; 
   min-width: 200px;
 }
 
@@ -173,7 +173,7 @@
 
 /* 购买结果展示 */
 .purchase-result {
-  padding: 70px 50px; /* 大幅增大内边距 */
+  padding: 70px 50px; /* 内边距 */
   text-align: center;
 }
 
@@ -181,41 +181,41 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 40px 0; /* 增大上下边距 */
+  margin: 40px 0; /* 上下边距 */
 }
 
 .reward-image {
-  max-width: 350px; /* 增大奖励图片尺寸 */
+  max-width: 350px; /* 图片尺寸 */
   max-height: 350px;
   border-radius: 12px;
   margin-bottom: 25px;
 }
 
 .reward-name {
-  font-size: 28px; /* 增大奖励名称字体 */
+  font-size: 28px; /* 名称字体 */
   font-weight: 600;
   color: #333;
-  margin-top: 30px; /* 增加上边距 */
+  margin-top: 30px; /* 上边距 */
 }
 
 .result-hint {
   color: #666;
   margin-bottom: 30px;
-  font-size: 18px; /* 增大提示文字 */
+  font-size: 18px; /* 提示文字 */
 }
 
 .continue-button {
-  padding: 15px 40px; /* 增大确认按钮 */
+  padding: 15px 40px; /* 确认按钮 */
   background-color: #426a92;
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 18px; /* 增大按钮字体 */
+  font-size: 18px; /* 按钮字体 */
   cursor: pointer;
-  min-width: 180px; /* 设置最小宽度 */
+  min-width: 180px; /* 最小宽度 */
 }
 
-/* 保持响应式支持 */
+
 @media (max-width: 1200px) {
   .modal-content {
     min-width: auto;
@@ -229,7 +229,7 @@
   
   .product-description {
     font-size: 48px; /* 在较小屏幕上稍微减小字体，但仍保持大尺寸 */
-    padding: 15px 20px; /* 减小内边距 */
+    padding: 15px 20px; /* 内边距 */
   }
 }
 
@@ -245,6 +245,6 @@
   
   .product-description {
     font-size: 40px; /* 在移动设备上进一步减小字体 */
-    padding: 15px 15px; /* 进一步减小内边距 */
+    padding: 15px 15px; /* 内边距 */
   }
 }

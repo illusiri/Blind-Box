@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types'; // 确保已导入 PropTypes
+import PropTypes from 'prop-types'; 
 import './Sign.css';
 
 export default function Register({ onSwitchToLogin }) {

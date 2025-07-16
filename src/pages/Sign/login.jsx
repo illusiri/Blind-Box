@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Sign.css';
-import PropTypes from 'prop-types'; // 确保已导入 PropTypes
+import PropTypes from 'prop-types'; 
 
 export default function Login({ onSwitchToRegister, onLoginSuccess }) {
   const [formData, setFormData] = useState({

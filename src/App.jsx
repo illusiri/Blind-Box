@@ -11,7 +11,7 @@ import './pages/Community/community.css';
 import Sign from './pages/Sign/sign.jsx'; 
 import PropTypes from 'prop-types';
 
-// 导入图标
+
 import homeIcon from './assets/icons/home.png'; 
 import profileIcon from './assets/icons/profile.png';
 import orderIcon from './assets/icons/order.png';
